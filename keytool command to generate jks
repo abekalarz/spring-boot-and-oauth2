@@ -1,1 +1,0 @@
-keytool -genkeypair -alias springbootoauth2 -keyalg RSA -keysize 2048 -keystore springbootoauth2_jwt_key.jks -validity 36500 -keypass password -storepass password
