@@ -27,3 +27,7 @@
 
 ### Mac OS ###
 .DS_Store
+
+### Project specific files ###
+/docker/jar/
+/docker/mongo-import/dump/

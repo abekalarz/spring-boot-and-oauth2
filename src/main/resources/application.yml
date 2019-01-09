@@ -3,8 +3,8 @@ spring:
     mongodb:
       database: springbootoauth2
       port: 27017
-      uri: mongodb://localhost
-
+  profiles:
+    active: local
 
 #TODO Remove after 'full OAUth2 implementation'!
 #management:

@@ -1,5 +1,8 @@
 version: '3.1'
 
+#  mongo-import/copy_mongo_dump.sh | docker-compose --verbose up
+
+
 services:
   mongo:
     image: mongo:3.6
@@ -30,6 +33,7 @@ services:
       - mongo
 
   spring_build_and_run:
+    image: spring_build_and_run
     build: .
     ports:
       - 8080:8080

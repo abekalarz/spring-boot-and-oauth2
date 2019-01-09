@@ -3,20 +3,7 @@ spring:
     mongodb:
       database: springbootoauth2
       port: 27017
-      uri: mongodb://localhost
-
-#TODO Remove after 'full OAUth2 implementation'!
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: "*"
-
-#ONLY FOR DEVELOPMENT AND TESTING !
-#logging:
-#  level:
-#    pl.springbootoauth2: DEBUG
-#    ROOT: DEBUG
+      uri: mongodb://mongo
 
 springBootService:
   admin:
