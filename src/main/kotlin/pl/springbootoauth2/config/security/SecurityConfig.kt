@@ -49,31 +49,9 @@ class SecurityConfig(
     override fun configure(http: HttpSecurity) {
         http.authorizeRequests().antMatchers("/login").permitAll()
                 .antMatchers("/signup").permitAll()
-//                .antMatchers("/oauth/token/revokeById/**").permitAll()
-//                .antMatchers("/tokens/**").permitAll()
                 .anyRequest().authenticated()
                 .and().formLogin().permitAll()
                 .and().csrf().disable()
-
-//        http
-//                .sessionManagement()
-//                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-//                .and()
-//                .csrf().disable()
-//                .authorizeRequests()
-//                .antMatchers("/about").permitAll()
-//                .antMatchers("/signup").permitAll()
-//                .antMatchers("/login").permitAll()
-//                .antMatchers("/oauth/token").permitAll()
-//                .antMatchers("/oauth/authorize").permitAll()
-//                .antMatchers("/oauth/confirm_access").permitAll()
-//                .antMatchers("/actuator/**").permitAll() // TODO Remove after 'full OAUth2 implementation'!
-//                .anyRequest().authenticated()
-//                .and()
-//                .formLogin().permitAll()
-//                .and()
-//                .httpBasic()
-//                .realmName("CRM_REALM")
     }
 
     @Order(Ordered.HIGHEST_PRECEDENCE)

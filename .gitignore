@@ -27,6 +27,7 @@
 
 ### Mac OS ###
 .DS_Store
+.DS_Store?
 
 ### Project specific files ###
 /docker/jar/
