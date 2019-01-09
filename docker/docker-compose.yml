@@ -1,0 +1,43 @@
+version: '3.1'
+
+services:
+  mongo:
+    image: mongo:3.6
+    ports:
+      - 27017:27017
+    networks: 
+      - spring-boot-network
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 30s
+
+  mongo_import:
+    image: mongo:3.6
+    links:
+      - mongo
+    networks: 
+      - spring-boot-network
+    volumes:
+      - ./mongo-import:/mongo-import
+    command:
+      chmod +x /mongo-import/import.sh
+    command:
+      /mongo-import/import.sh
+    depends_on:
+      - mongo
+
+  spring_build_and_run:
+    build: .
+    ports:
+      - 8080:8080
+    networks: 
+      - spring-boot-network
+    depends_on:
+      - mongo
+
+networks:
+  spring-boot-network:
+    driver: bridge
